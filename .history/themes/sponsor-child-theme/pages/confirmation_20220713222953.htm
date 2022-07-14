@@ -1,0 +1,36 @@
+title = "Confirm" 
+layout = "default" 
+url = "/confirm/:id"
+
+[childInfo]
+id = "{{ :id }}"
+==
+
+<div class="row page g-0">
+    <div class="secondary-section">
+        <h2>Sponsorship Application Complete</h2>
+        <div class="large-icon text-success">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10vw" height="10vw" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+              </svg>
+        </div>
+        <h4>Thank You...! <br>For your love for this child</h4>
+        <div class="p-3">
+            <div class="card card-horizontal">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-6">
+                        <img class="img-fluid rounded-start p-3" style="height: 100%;" alt="{{childInfo.child.photo.title}}" src="{{childInfo.child.photo.path}}">
+                    </div>
+                    <div class="col-md-6 card-body ">
+                        <h5 class="card-title">{{childInfo.child.full_name}}</h5>
+                        <div class="card-text btn btn-danger btn-lg">{{childInfo.child.getGenderNameAttribute}}</div>
+                        <div class="card-text btn btn-outline-danger btn-lg">{{childInfo.child.getAgeAttribute}} years old</div>
+                        <p class="card-text"><small class="text-muted">{{childInfo.child.getDistrictNameAttribute}}</small></p>
+                    </div>
+                </div>                   
+            </div>
+        </div>
+        <h3>We will contact you for further process & completion of sponsorship</h3>
+    </div>
+</div>

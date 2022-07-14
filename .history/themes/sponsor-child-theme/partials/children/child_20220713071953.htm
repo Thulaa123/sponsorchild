@@ -1,0 +1,12 @@
+<div class="card p-2">
+    <img src="{{child.photo.path}}" class="card-img-top" alt="{{child.photo.title}}">
+    <div class="card-body">
+        <h5 class="card-title">{{child.full_name}}</h5>
+        <div class="card-text btn btn-danger btn-sm">{{child.getGenderNameAttribute}}</div>
+        <div class="card-text btn btn-outline-danger btn-sm">{{child.getAgeAttribute}} years old</div>
+        <p class="card-text"><small class="text-muted">{{child.getDistrictNameAttribute}}</small></p>
+        <div class="d-grid gap-2 row">
+            <a class="btn btn-success rounded-pill" type="button" href="{{ 'apply' | page({ id:child.id }) }}">Sponsor Me</a>
+        </div>
+    </div>
+</div>

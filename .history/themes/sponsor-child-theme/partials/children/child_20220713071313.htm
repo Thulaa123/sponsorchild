@@ -1,0 +1,26 @@
+<div class="col-lg-4 col-md-6 col-12">
+    <div class="wpo-campaign-single">
+        <div class="wpo-campaign-item">
+            <div class="wpo-campaign-img">
+                <img src="{{child.photo.path}}" alt="">
+            </div>
+            <div class="wpo-campaign-content">
+                <div class="wpo-campaign-text-top">
+                    <h2>{{child.full_name}}</h2>
+                    <ul>
+                        <li><span class="thumb">{{child.getGenderNameAttribute}}</span></li>
+                        <li><span class="thumb">{{child.getAgeAttribute}} years old</span></li>
+                    </ul>
+                    <div class="campaign-btn">
+                        <ul>
+                            <li>
+                                <span><a href="#">{{child.getDistrictNameAttribute}}</a></span>
+                            </li>
+                            <li><a class="e-btn" type="button" href="{{ 'apply' | page({ id:child.id }) }}">Sponsor Me</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="col-lg-4 col-md-6 col-12">
+    <div class="wpo-campaign-single">
+        <div class="wpo-campaign-item">
+            <div class="wpo-campaign-img">
+                <img src="{{child.photo.path}}" alt="">
+            </div>
+            <div class="wpo-campaign-content">
+                <div class="wpo-campaign-text-top">
+                    <h2>{{child.full_name}}</h2>
+                    <ul>
+                        <li><span class="thumb">{{child.getGenderNameAttribute}}</span></li>
+                        <li><span class="thumb">{{child.getAgeAttribute}} years old</span></li>
+                    </ul>
+                    <div class="campaign-btn">
+                        <ul>
+                            <li>
+                                <span><a href="#">{{child.getDistrictNameAttribute}}</a></span>
+                            </li>
+                            <li><a class="e-btn" type="button" href="{{ 'apply' | page({ id:child.id }) }}">Sponsor Me</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card p-2">
+    <img src="{{child.photo.path}}" class="card-img-top" alt="{{child.photo.title}}">
+    <div class="card-body">
+        <h5 class="card-title">{{child.full_name}}</h5>
+        <div class="card-text btn btn-danger btn-sm">{{child.getGenderNameAttribute}}</div>
+        <div class="card-text btn btn-outline-danger btn-sm">{{child.getAgeAttribute}} years old</div>
+        <p class="card-text"><small class="text-muted">{{child.getDistrictNameAttribute}}</small></p>
+        <div class="d-grid gap-2 row">
+            <a class="btn btn-success rounded-pill" type="button" href="{{ 'apply' | page({ id:child.id }) }}">Sponsor Me</a>
+        </div>
+    </div>
+</div>

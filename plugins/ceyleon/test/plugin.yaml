@@ -1,0 +1,6 @@
+plugin:
+    name: 'ceyleon.test::lang.plugin.name'
+    description: 'ceyleon.test::lang.plugin.description'
+    author: ceyleon
+    icon: oc-icon-adjust
+    homepage: ''

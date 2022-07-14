@@ -1,0 +1,147 @@
+title = "Apply" layout = "default" url = "/apply/:id" [sponsorInfo] [countryInfo] [childInfo] id = "{{ :id }}" ==
+<div class="row page g-0">
+    <div class="secondary-section">
+        <div class="">
+            <h1>Sponsor a child <br> in Sri Lanka</h1>
+            <p>Let's change their life and their whole community.</p>
+        </div>
+        <p>
+            <!-- {{childInfo.child}} -->
+        </p>
+        <div class="p-3">
+            <div class="card card-horizontal">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-6">
+                        <img class="img-fluid rounded-start p-3" style="height: 100%;" alt="{{childInfo.child.photo.title}}" src="{{childInfo.child.photo.path}}">
+                    </div>
+                    <div class="col-md-6 card-body ">
+                        <h5 class="card-title">{{childInfo.child.full_name}}</h5>
+                        <div class="card-text btn btn-danger btn-lg">{{childInfo.child.getGenderNameAttribute}}</div>
+                        <div class="card-text btn btn-outline-danger btn-lg">{{childInfo.child.getAgeAttribute}} years old</div>
+                        <p class="card-text"><small class="text-muted">{{childInfo.child.getDistrictNameAttribute}}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-3">
+            <h3>Please fill the form below to sponsor the selected child</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card2">
+                        <div class="card-body">
+                            <h2 class="title">Registration Form</h2>
+                            <!--<form method="POST">-->
+                            <form data-request="onSave">
+                                <div class="row d-flex flex-column align-items-center">
+                                    <div class="form-field">
+                                        <div class="input-group">
+                                            <label class="label">Full Name</label>
+                                            <input class="input--style-4" type="text" name="full_name">
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="input-group">
+                                            <label class="label">NIC / Passport </label>
+                                            <input class="input--style-4" type="text" name="nationality_id">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-field">
+                                        <div class="input-group">
+                                            <label class="label">Date of Birth</label>
+                                            <div class="date-field">
+                                                <div class="col-third">
+                                                    <input type="text" name="dd" placeholder="DD" />
+                                                </div>
+                                                <div class="col-third">
+                                                    <input type="text" name="mm" placeholder="MM" />
+                                                </div>
+                                                <div class="col-third">
+                                                    <input type="text" name="yyyy" placeholder="YYYY" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="input-group">
+                                            <label class="label" for="gender">Gender</label>
+                                            <select name="gender" id="gender" class="form-control">
+                                                <option selected>Select...</option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                                <option>Not defined</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="input-group">
+                                            <label class="label" for="civil_status">Civil Status</label>
+                                            <select name="civil_status" , id="civil_status" class="form-control">
+                                                <option selected>Select...</option>
+                                                <option>Single</option>
+                                                <option>Married</option>
+                                                <option>Divorced</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="input-group">
+                                            <label class="label">Contact Number</label>
+                                            <input class="input--style-4" type="text" name="contact_number">
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="input-group">
+                                            <label class="label">Email</label>
+                                            <input class="input--style-4" type="email" name="email">
+                                        </div>
+                                    </div>
+                                    <label class="grp-label">Address</label>
+                                    <div class="form-field">
+                                        <div class="input-group">
+                                            <label class="label">Address Line 1</label>
+                                            <input class="input--style-4" type="text" name="address_line_1">
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="input-group">
+                                            <label class="label">Address Line 2 </label>
+                                            <input class="input--style-4" type="text" name="address_line_2">
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="input-group">
+                                            <label class="label">City</label>
+                                            <input class="input--style-4" type="text" name="city">
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="input-group">
+                                            <label class="label">State</label>
+                                            <input class="input--style-4" type="text" name="state">
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="input-group">
+                                            <label class="label" for="country">Country</label>
+                                            <select name="country" id="country" class="form-control">
+                                                <option selected>Select...</option>
+                                                {% for country in countryInfo.country %}
+                                                    <option value="{{country.country_code}}">{{country.name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-field mt-3">
+                                    </div>
+                                    <input class="btn btn-danger rounded-pill submit-button" type="submit">Apply</input>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
