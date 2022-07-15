@@ -1,0 +1,132 @@
+url = "/"
+layout = "default"
+title = "Home"
+
+[childInfo]
+==
+<!-- start of wpo-hero-section-1 -->
+<section class="wpo-hero-section-1">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col col-xs-6 col-lg-6">
+                <div class="wpo-hero-section-text">
+                    <div class="wpo-hero-title-top">
+                        <span>Help Children</span>
+                    </div>
+                    <div class="wpo-hero-title">
+                        <h2>Your Generosity Can Change Child’s Life</h2>
+                    </div>
+                    <div class="wpo-hero-subtitle">
+                        <p>We help underprevilage children access nutrition, healthcare, education, clean water, and a safe environment.</p>
+                    </div>
+                    <div class="btns">
+                        <a href="#sponsor" class="btn theme-btn-s2">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="right-vec">
+                    <div class="right-items-wrap">
+                        <div class="right-item">
+                            <div class="r-img">
+                                <img src="{{ 'assets/images/slider/child 4.png'|theme }}" alt="">
+                            </div>
+                        </div>
+                        <div class="right-item">
+                            <div class="wpo-total-project">
+                                <div class="wpo-total-project-wrap">
+                                    <div class="wpo-total-project-icon">
+                                        <i class="fi flaticon-salary"></i>
+                                    </div>
+                                    <div class="wpo-total-project-text">
+                                    {% for child in childInfo.childrendetails|slice(0,1) %}
+                                        <h3>{{ loop.length }}</h3>
+                                    {% endfor %}
+                                        <p>Total Projects</p>
+                                    </div>
+                                </div>
+                                <div class="project-shape">
+                                    <img src="{{ 'assets/images/slider/s.png'|theme }}" alt="">
+                                </div>
+                            </div>
+                            <div class="r-img">
+                                <img src="{{ 'assets/images/slider/child 7.png'|theme }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end of wpo-hero-section-1 slider -->
+<!-- wpo-campaign-area start -->
+<div class="wpo-campaign-area section-padding" id="sponsor">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="wpo-section-title">
+                    <span>We Love To Help</span>
+                    <h2>Sponsor a child in Sri Lanka</h2>
+                    <p>Let's change their life and their whole community.</p>
+                </div>
+            </div>
+        </div>
+        <div class="wpo-campaign-wrap">
+            <div class="row">
+            {% for child in childInfo.childrendetails.slice(3).reverse() %}
+                {% partial 'children/child' child=child %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- wpo-campaign-area end -->
+<!-- wpo-cta-area end -->
+<div class="wpo-cta-area" style="margin-top:50px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="wpo-cta-section">
+                    <div class="wpo-cta-content">
+                        <h2>Lets Chenge The World With Humanity</h2>
+                        <a href="{{ 'students' | page  }}">See All Children </a>
+                    </div>
+                    <div class="volunteer-img">
+                        <img src="{{ 'assets/images/volunteer.png'|theme }}" alt="">
+                    </div>
+                    <div class="shape"><img src="{{ 'assets/images/cta-shape.png'|theme }}" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- wpo-cta-area end -->
+<!-- start partners-section -->
+<section class="partners-section section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="wpo-section-title">
+                    <span>Who help us</span>
+                    <h2>Our Partners</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-xs-4">
+                <div class="row justify-content-center">
+                    <div class="col-3">
+                        <img src="{{ 'assets/images/sparetime-global-logo.png'|theme }}" alt height="130px">
+                    </div>
+                    <div class="col-2">
+                        <img src="{{ 'assets/images/wib.png'|theme }}" alt height="130px"  >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end container -->
+</section>
+<!-- end partners-section -->

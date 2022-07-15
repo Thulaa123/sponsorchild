@@ -1,0 +1,120 @@
+url = "/students"
+layout = "default"
+title = "Students"
+
+[childInfo]
+==
+<!-- start of breadcumb-section -->
+<div class="wpo-breadcumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="wpo-breadcumb-wrap">
+                    <h2>All Children</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><span>All</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of wpo-breadcumb-section-->
+<!-- wpo-campaign-area start -->
+<div class="wpo-campaign-area bg-green section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="wpo-section-title">
+                    <span>We Love To Help</span>
+                    <h2>Sponsor a child in Sri Lanka</h2>
+                    <p>Let's change their life and their whole community.</p>
+                </div>
+            </div>
+        </div>
+        <style>
+        table.dataTable.no-footer {
+            border-bottom: 0;
+        }
+        tr{
+            border:none;
+        }
+        td{
+            border:none;
+        }
+        </style>
+        <div class="wpo-campaign-wrap">
+            <div class="row">
+            <div class="table-responsive">
+                <table class="table" id="children" style="width:100%;border:none;">
+                    <thead class="">
+                        <tr style="cursor: pointer;">
+                            <th class="d-none wd-10p bg-primary border-end rounded-start text-white border-bottom-0">{{child.full_name}}</th>
+                        </tr>
+                    </thead>
+                    <tbody style="cursor: pointer;" class="row row-cols-1 row-cols-sm-12 row-cols-md-3 gy-3">
+                    {% for child in childInfo.childrendetails %}
+                    <tr>
+                        <td>
+                            <div class="wpo-campaign-single">
+                                <div class="wpo-campaign-item">
+                                    <div class="wpo-campaign-img">
+                                        <img src="{{child.photo.path}}" alt="{{child.photo.path}}" height="300px" width="300px">
+                                        {% if child.sp_st == 1 %}
+                                            <span class="thumb">Sponsored</span>
+                                        {% endif %}
+                                    </div>
+                                    <div class="wpo-campaign-content">
+                                        <div class="wpo-campaign-text-top">
+                                            <h2>{{child.full_name}}</h2>
+                                            <ul>
+                                                <li><span class="thumb">{{child.getGenderNameAttribute}}</span></li>
+                                                <li><span class="thumb">{{child.getAgeAttribute}} years old</span></li>
+                                            </ul>
+                                            <div class="campaign-btn">
+                                                <ul>
+                                                    <li>
+                                                        <span><a href="#">{{child.getDistrictNameAttribute}}</a></span>
+                                                    </li>
+                                                    <li>
+                                                    {% if child.sp_st == 1 %}
+                                                        <a class="e-btn" type="button" href="#">Sponsored</a></li>
+                                                    {% else %}
+                                                        <a class="e-btn" type="button" href="{{ 'apply' | page({ id:child.id }) }}">Sponsor Me</a></li>
+                                                    {% endif %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </td>
+                       </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- wpo-campaign-area end -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script>
+    $(document).ready(function () {
+        var table = $('#children').DataTable(
+            {
+                "language": {
+                    "lengthMenu": "Display _MENU_ records per page",
+                    "zeroRecords": "Nothing found - sorry",
+                    "info": "Showing page _PAGE_ of _PAGES_ from total _MAX_ records",
+                    "infoEmpty": "No records available",
+                    "infoFiltered": "(filtered from _MAX_ total records)"
+                },
+                "order": [[0, "desc"]],
+                "processing": true,
+            }
+        );
+    });
+</script>
