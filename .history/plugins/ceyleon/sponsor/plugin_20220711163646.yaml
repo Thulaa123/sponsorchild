@@ -1,0 +1,28 @@
+plugin:
+    name: 'ceyleon.sponsor::lang.plugin.name'
+    description: 'ceyleon.sponsor::lang.plugin.description'
+    author: Ceyleon
+    icon: oc-icon-child
+    homepage: 'https://sponsor.com'
+navigation:
+    sponsor:
+        label: Sponsor
+        url: ceyleon/sponsor/children
+        icon: icon-child
+        sideMenu:
+            children:
+                label: Children
+                url: ceyleon/sponsor/children
+                icon: icon-child
+            sponsors:
+                label: Sponsors
+                url: ceyleon/sponsor/sponsors
+                icon: icon-users
+            sponsorships:
+                label: Sponsorships
+                url: ceyleon/sponsor/sponsorships
+                icon: icon-connectdevelop
+            countries:
+                label: Countries
+                url: ceyleon/sponsor/countries
+                icon: icon-globe
